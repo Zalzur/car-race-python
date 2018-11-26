@@ -8,7 +8,6 @@ class Weather:
     @staticmethod
     def set_raining():
         chance = random.randint(0, 9)
-        print(chance)
         if chance < 3:
             Weather.raining = True
         else:
