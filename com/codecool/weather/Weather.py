@@ -3,16 +3,16 @@ import random
 
 class Weather:
 
-    raining = False
+    __raining = False
 
     @staticmethod
     def set_raining():
         chance = random.randint(0, 9)
         if chance < 3:
-            Weather.raining = True
+            Weather.__raining = True
         else:
-            Weather.raining = False
+            Weather.__raining = False
 
     @staticmethod
     def is_raining():
-        return Weather.raining
+        return Weather.__raining
