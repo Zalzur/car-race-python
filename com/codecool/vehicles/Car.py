@@ -17,8 +17,10 @@ class Car(Vehicle):
         super(Car, self).__init__(name, normal_speed, distance_traveled)
 
     def move_for_an_hour(self, race):
-        """TODO: Finish implementation when broken truck is ready"""
-        self.distance_traveled += self.normal_speed
+        if race.is_there_a_broken_truck():
+            self.distance_traveled += Vehicle._SPEED_LIMIT_WHEN_BREAKDOWN
+        else:
+            self.distance_traveled += self.normal_speed
 
     def __repr__(self):
         return self.name + " - " + str(self.distance_traveled)
