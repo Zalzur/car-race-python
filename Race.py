@@ -29,6 +29,7 @@ class Race:
                 self.vehicles[j].move_for_an_hour(self)
 
     def print_race_results(self):
+        vehicle_type = self.vehicles[0].__class__.__name__
         for i in range(len(self.vehicles)):
             if i == 0 or self.vehicles[i].__class__.__name__ != vehicle_type:
                 vehicle_type = self.vehicles[i].__class__.__name__
