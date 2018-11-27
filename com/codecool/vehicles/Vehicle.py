@@ -3,7 +3,7 @@ import abc
 
 class Vehicle(abc.ABC):
 
-    _SPEED_LIMIT_WHEN_RAINS = 75
+    _SPEED_LIMIT_WHEN_BREAKDOWN = 75
 
     def __init__(self, name, speed, distance_traveled):
         self.name = name

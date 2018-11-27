@@ -1,6 +1,5 @@
-from com.codecool.vehicles.Vehicle import Vehicle
 import random
-
+from com.codecool.vehicles.Vehicle import Vehicle
 from com.codecool.weather.Weather import Weather
 
 
@@ -15,8 +14,8 @@ class Motorcycle(Vehicle):
         Motorcycle.name_counter += 1
         speed = 100
         distance_traveled = 0
-        self.rain_speed = speed - random.randint(Motorcycle.__MIN_SPEED_LOSS, Motorcycle.__MAX_SPEED_LOSS)
         super(Motorcycle, self).__init__(name, speed, distance_traveled)
+        self.rain_speed = speed - random.randint(Motorcycle.__MIN_SPEED_LOSS, Motorcycle.__MAX_SPEED_LOSS)
 
     def move_for_an_hour(self):
         """TODO: Finis implementation when Truck is ready"""

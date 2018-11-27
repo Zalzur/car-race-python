@@ -1,5 +1,5 @@
-from com.codecool.vehicles.Vehicle import Vehicle
 import random
+from com.codecool.vehicles.Vehicle import Vehicle
 
 
 class Car(Vehicle):
