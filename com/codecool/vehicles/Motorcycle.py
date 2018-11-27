@@ -18,8 +18,16 @@ class Motorcycle(Vehicle):
         self.rain_speed = normal_speed - random.randint(Motorcycle.__MIN_SPEED_LOSS, Motorcycle.__MAX_SPEED_LOSS)
 
     def move_for_an_hour(self, race):
-        """TODO: Finis implementation when Truck is ready"""
-        self.distance_traveled += self.normal_speed
+        if Weather.is_raining():
+            if race.is_there_a_broken_truck() and self.rain_speed > Vehicle._SPEED_LIMIT_WHEN_BREAKDOWN:
+                self.distance_traveled += Vehicle._SPEED_LIMIT_WHEN_BREAKDOWN
+            else:
+                self.distance_traveled += self.rain_speed
+        else:
+            if race.is_there_a_broken_truck():
+                self.distance_traveled += Vehicle._SPEED_LIMIT_WHEN_BREAKDOWN
+            else:
+                self.distance_traveled += self.normal_speed
 
     def __repr__(self):
         return self.name + " - " + str(self.distance_traveled)

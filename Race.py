@@ -47,4 +47,3 @@ if __name__ == "__main__":
     race.create_vehicles()
     race.simulate_race()
     race.print_race_results()
-
