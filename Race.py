@@ -26,7 +26,7 @@ class Race:
         for i in range(Race.__RACE_HOURS):
             Weather.set_raining()
             for j in range(len(self.vehicles)):
-                self.vehicles[j].move_for_an_hour()
+                self.vehicles[j].move_for_an_hour(self)
 
     def print_race_results(self):
         for i in range(len(self.vehicles)):
