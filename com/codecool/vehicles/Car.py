@@ -6,14 +6,13 @@ class Car(Vehicle):
 
     __LOW_SPEED = 80
     __TOP_SPEED = 110
-    __SPEED_LIMIT = 75
     __CAR_NAME_LIST = ["Prime", "Marvel", "Pinnacle", "Chase", "Renegade",
                        "Ethereal", "Legend", "Guardian", "Vertex", "Encounter"]
 
     def __init__(self):
-        name = "{0} {1}".format(self.__CAR_NAME_LIST[random.randint(0, len(self.__CAR_NAME_LIST)-1)],
-                                self.__CAR_NAME_LIST[random.randint(0, len(self.__CAR_NAME_LIST)-1)])
-        speed = random.randint(self.__LOW_SPEED, self.__TOP_SPEED + 1)
+        name = "{0} {1}".format(Car.__CAR_NAME_LIST[random.randint(0, len(Car.__CAR_NAME_LIST)-1)],
+                                Car.__CAR_NAME_LIST[random.randint(0, len(Car.__CAR_NAME_LIST)-1)])
+        speed = random.randint(Car.__LOW_SPEED, Car.__TOP_SPEED + 1)
         distance_traveled = 0
         super(Car, self).__init__(name, speed, distance_traveled)
 
